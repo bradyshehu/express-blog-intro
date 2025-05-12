@@ -1,3 +1,7 @@
+require("dotenv").config();
+
+const { APP_HOST, APP_PORT } = process.env;
+
 const express = require("express");
 const app = express();
 const port = 3000;
@@ -46,5 +50,5 @@ app.get("/bacheca", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Il server é in ascolto sulla porta " + port);
+  console.log("Il server é in ascolto su " + APP_HOST + ":" + APP_PORT);
 });
